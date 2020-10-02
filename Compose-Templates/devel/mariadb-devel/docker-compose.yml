@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  mariadb:
+    image: mariadb:10.5.5
+    container_name: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpass
+    networks:
+      defnet:
+        ipv4_address: 10.100.0.100
+    restart: always
+    volumes:
+      - mariadb:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+volumes:
+  mariadb:
+
+networks:
+  defnet:
+    external: true

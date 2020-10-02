@@ -1,0 +1,11 @@
+{
+  "database": {
+    "engine": "mysql",
+    "host": "mariadb",
+    "name": "webproxymgr",
+    "user": "webproxymgr",
+    "password": "webproxymgr",
+    "port": 3306
+  }
+}
+
