@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  gitea:
+    image: gitea/gitea:latest
+    container_name: gitea
+    environment:
+      - DB_TYPE=mysql
+      - DB_HOST=mariadb:3306
+      - DB_NAME=gitea
+      - DB_USER=gitea
+      - DB_PASSWD=gitea
+      - APP_NAME="Gitea: Garlicbready Main"
+      - RUN_MODE=prod
+    networks:
+      defnet:
+        ipv4_address: 10.100.0.102
+    restart: always
+    volumes:
+      - gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "4000:3000"
+      - "222:22"
+
+volumes:
+  gitea:
+
+networks:
+  defnet:
+    external: true
