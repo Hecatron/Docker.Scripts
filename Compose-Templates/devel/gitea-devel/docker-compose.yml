@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   gitea:
-    image: gitea/gitea:latest
+    image: gitea/gitea:1
     container_name: gitea
     environment:
       - DB_TYPE=mysql

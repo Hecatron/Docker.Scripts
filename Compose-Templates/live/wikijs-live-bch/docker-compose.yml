@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  wikijs-bch:
+    image: requarks/wiki:2
+    container_name: wikijs-bch
+    environment:
+      - DB_TYPE=mariadb
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_NAME=wikijs-bch
+      - DB_USER=wikijs-bch
+      - DB_PASS=wikijs-bch
+    networks:
+      defnet-prod:
+        ipv4_address: 10.101.0.104
+    restart: always
+    volumes:
+      - wikijs-bch:/wiki/data/content
+    ports:
+      - "9105:3000"
+
+volumes:
+  wikijs-bch:
+
+networks:
+  defnet-prod:
+    external: true

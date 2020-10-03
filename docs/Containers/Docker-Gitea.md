@@ -73,7 +73,3 @@ ROOT_URL         = http://app.gbd.local:3000
 ```
 
 Followed by a gitea restart
-
-
-todo setup live with webproxy and old data
-http://app.gbd.local:4000/

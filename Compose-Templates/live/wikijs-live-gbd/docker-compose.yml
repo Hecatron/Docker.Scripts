@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  wikijs-gbd:
+    image: requarks/wiki:2
+    container_name: wikijs-gbd
+    environment:
+      - DB_TYPE=mariadb
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_NAME=wikijs-gbd
+      - DB_USER=wikijs-gbd
+      - DB_PASS=wikijs-gbd
+    networks:
+      defnet-prod:
+        ipv4_address: 10.101.0.103
+    restart: always
+    volumes:
+      - wikijs-gbd:/wiki/data/content
+    ports:
+      - "9104:3000"
+
+volumes:
+  wikijs-gbd:
+
+networks:
+  defnet-prod:
+    external: true
