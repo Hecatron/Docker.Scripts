@@ -16,9 +16,9 @@ services:
       # Public HTTPS Port:
       - '443:443'
       # Admin Web Port
-      - '9001:81'
+      - '9101:81'
       # Api Web Port:
-      - '9002:3000'
+      - '9102:3000'
     
     volumes:
       # This isn't needed directly, but just associates the volume with the container

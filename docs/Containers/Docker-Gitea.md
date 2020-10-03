@@ -7,11 +7,6 @@
 
 ## Setup
 
-To setup run
-```
-./setup.py
-```
-
 
 ### Setup the Database
 
@@ -26,12 +21,21 @@ gitea will setup its own user called "git" inside docker
 so we don't need to worry about it / just leave it as the default user id of git
 
 
+### Script
+
+To setup run
+```
+./setup.py
+```
+
+
 ### Themes
 
 ```
 # first lets create a directory for the themes
-cd /mnt/vol2/var/docker/volumes/devel_gitea/_data/gitea/
+cd /mnt/vol2/var/docker-prod/volumes/live_gitea/_data/gitea/
 mkdir -p themes
+cd themes
 
 # Next lets clone them all
 git clone https://gitea.artixlinux.org/artix/gitea-dark-blue.git
@@ -58,4 +62,18 @@ THEMES = gitea,arc-green,matrix
 DEFAULT_THEME = matrix
 ```
 
+Under the server section set the the domains and root url
+```
+[server]
+APP_DATA_PATH    = /data/gitea
+DOMAIN           = app.gbd.local
+SSH_DOMAIN       = app.gbd.local
+HTTP_PORT        = 3000
+ROOT_URL         = http://app.gbd.local:3000
+```
+
 Followed by a gitea restart
+
+
+todo setup live with webproxy and old data
+http://app.gbd.local:4000/

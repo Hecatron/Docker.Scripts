@@ -5,17 +5,20 @@
 
 ## Setup
 
-To setup run
-```
-./setup.py
-```
-
 
 ### Setup the Database
 
   * databaseid: webproxymgr
   * user: webproxymgr
   * pass: webproxymgr
+
+
+### Script
+
+To setup run
+```
+./setup.py
+```
 
 
 ### Login
@@ -26,13 +29,25 @@ To setup run
 
 ## Proxy Mappings
 
-  * Set the default http landing page - http://app.gbd.local to the wiki with a list of sites on
+### Development
 
   * http://app.gbd.local:9000 -> portainer devel
-  * http://app.gbd.local:9100 -> portainer live
-  * http://app.gbd.local:9101 -> web proxy manager
 
-Proxied:
+### Live
+
+
+  * http://app.gbd.local -> Set the default http landing page to the wiki with a list of sites on
+    ports 80 / 443
+
+  * http://app.gbd.local:9100 -> portainer live
+  * http://app.gbd.local:9101 -> web proxy manager admin
+  * http://app.gbd.local:9102 -> web proxy manager api
+  * http://app.gbd.local:9103 -> gitea web
+  * http://app.gbd.local:222 -> gitea ssh
+
+
+
+### Proxied
 
   * http://app.gbd.local -> proxy -> to wikijs / page list
   * http://git.gbd.local -> proxy -> gitea

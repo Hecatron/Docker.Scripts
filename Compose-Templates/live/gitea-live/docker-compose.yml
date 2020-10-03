@@ -13,20 +13,20 @@ services:
       - APP_NAME="Gitea - Garlicbready Main"
       - RUN_MODE=prod
     networks:
-      defnet:
-        ipv4_address: 10.100.0.102
+      defnet-prod:
+        ipv4_address: 10.101.0.102
     restart: always
     volumes:
       - gitea:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - "4000:3000"
-      - "223:22"
+      - "9103:3000"
+      - "222:22"
 
 volumes:
   gitea:
 
 networks:
-  defnet:
+  defnet-prod:
     external: true
