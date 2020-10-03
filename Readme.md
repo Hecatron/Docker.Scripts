@@ -4,3 +4,6 @@ This repo is just a series of docker images / docker-compose files for my own lo
 for setup on a rpi4 / gentoo
 
   * https://github.com/sakaki-/gentoo-on-rpi-64bit/wiki/Setting-up-Docker
+
+Note these are just example scripts. <br>
+No real credentials are stored here.
