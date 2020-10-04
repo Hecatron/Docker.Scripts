@@ -1,11 +1,13 @@
 #!/bin/bash
 
+scriptsdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 # Backup databases
-./db-backup.sh
+$scriptsdir/db-backup.sh
 # Backup volumes
-./volume-backup.sh
+$scriptsdir/volume-backup.sh
 # Copy backups to file server
-./copy-backups.sh
+$scriptsdir/copy-backups.sh
 # Housekeep over 30 days
-./housekeep.sh
+$scriptsdir/housekeep.sh
 
